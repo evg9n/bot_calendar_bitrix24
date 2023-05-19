@@ -1,0 +1,2 @@
+pyTelegramBotAPI==4.6.0
+fast-bitrix24==1.5.16
