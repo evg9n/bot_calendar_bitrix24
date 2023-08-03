@@ -1,6 +1,10 @@
 from telebot import TeleBot
-from config import TOKEN
 from telebot.storage import StateMemoryStorage
+from dotenv import load_dotenv
+from os import environ
+
+
+load_dotenv()
 
 storage = StateMemoryStorage()
-bot = TeleBot(token=TOKEN, state_storage=storage)
+bot = TeleBot(token=environ.get('TOKEN'), state_storage=storage)
