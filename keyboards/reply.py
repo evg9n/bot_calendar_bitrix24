@@ -4,7 +4,8 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 menu_button = ('Следить',
                "Установить(Обновить) webhook",
                "Текущий webhook",
-               "Инструкция",)
+               "Инструкция",
+               "На сколько дней вперед смотреть?",)
 back_button = ('Отмена',)
 
 

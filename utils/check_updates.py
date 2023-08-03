@@ -16,12 +16,10 @@ def check_updates(**kwargs):
         if kwargs.get('hook'):
             hook = kwargs.get('hook')
             owner_id = kwargs.get('owner_id')
-            now = datetime_now()
             user_id = kwargs.get('user_id')
-            chat_id = kwargs.get('chat_id')
 
             try:
-                get_affairs(hook=hook, owner_id=owner_id, now=now, user_id=user_id, chat_id=chat_id)
+                get_affairs(hook=hook, owner_id=owner_id, user_id=user_id)
             except ClientResponseError:
                 bot.send_message(chat_id=user_id,
                                  text='Некорректный webhook обратитесь к справке через /help',

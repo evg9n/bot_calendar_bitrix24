@@ -5,3 +5,4 @@ class StateCheck(StatesGroup):
     state_webhook = State()
     state_user_id = State()
     state_track = State()
+    state_days = State()

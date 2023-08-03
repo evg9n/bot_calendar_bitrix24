@@ -13,7 +13,7 @@ def get_json(user_id) -> dict:
             result = load(file)
         return result
     else:
-        return dict(webhook='', user_id='', list_id=[])
+        return dict(webhook='', days=14, user_id='', list_id={})
 
 
 def set_json(data, user_id):

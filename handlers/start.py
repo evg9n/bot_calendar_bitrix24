@@ -25,7 +25,7 @@ def start(message: Message):
                     supports_inline_queries=message.from_user.supports_inline_queries,
                     is_premium=message.from_user.is_premium,
                     added_to_attachment_menu=message.from_user.added_to_attachment_menu)
-        data = dict(webhook='', user_id='', user=user, list_id=[])
+        data = dict(webhook='', days=14, user_id='', user=user, list_id={})
         with open(file_name, 'w', encoding='utf-8') as file:
             dump(data, file, ensure_ascii=False, indent=4)
 
@@ -36,9 +36,7 @@ def start(message: Message):
 @bot.message_handler(func=lambda message: message.text == back_button[0] or message.text == '/menu')
 def start(message: Message):
     monitoring[message.from_user.id] = False
-    bot.set_state(user_id=message.from_user.id,
-                  state=None,
-                  chat_id=message.chat.id)
+    bot.delete_state(user_id=message.from_user.id, chat_id=message.chat.id)
     bot.send_message(chat_id=message.from_user.id, text='Главное меню', reply_markup=menu())
 
 
